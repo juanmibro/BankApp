@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SFPkUF9wyGmTH4zYiDaRG5PkakuoXKevV9YYhDOGuIKgTZR5Exoz7yUbBXMyBI0h3a+0dlHBUPsqo3r40g7gZw==",
+  "dgSpecHash": "jd651hsPvS9hMn5xWby0f7ywlNMRc8k71IqLFVeHzeEBV49WjoMcQ+dqtn3ksCQkP5Xua78kTVTauiLMR6rPNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1\\BankApp\\BankApp.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\juanm\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\juanm\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\juanm\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\juanm\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
