@@ -14,4 +14,11 @@ namespace BankApp
 
         }
     }
+
+    public class FailedTransferenceBetweenAccount : Exception
+    {
+        public FailedTransferenceBetweenAccount(Account from, Account to, double amount) : base($"Failed to transfer from {from.ToString()} to {to.ToString()} with ${amount:n2}")
+        {
+        }
+    }
 }

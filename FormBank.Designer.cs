@@ -1,5 +1,9 @@
 ﻿namespace BankApp
 {
+    /// <summary>
+    /// Bank Form class
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class FormBank
     {
         /// <summary>

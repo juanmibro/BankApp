@@ -1,71 +1,192 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq.Expressions;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 
 namespace BankApp
 {
-    public  class AccountsController
+
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public class AccountsController
     {
+
+        
+        
+        /// <summary>
+    /// 
+    /// </summary>
         private Customer customer;
+        /// <summary>
+        /// The accounts
+        /// </summary>
+        private List<Account> accounts;
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountsController"/> class.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
         public AccountsController(Customer customer) { 
+
             this.customer = customer;
+            this.accounts = customer.Accounts;
+
+        }
+        /// <summary>
+        /// Gets the accounts.
+        /// </summary>
+        /// <returns></returns>
+        public List<Account> GetAccounts()
+        {
+            return accounts;
         }
 
-        public void RegisterAccount(Account account)
+        /// <summary>
+        /// register account
+        /// </summary>
+        /// <param name="account"></param>
+        public void AddAccount(Account account)
         {
-            this.customer.Accounts.Add(account);
+            this.accounts.Add(account);
         }
-        public bool UnregisterAccount(Account account)
+
+        /// <summary>
+        /// unregister account
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public bool RemoveAccount(Account account)
         {
-            //if (account == null)
-            //{
-            //    return false;
-            //}
-
-
+            
             if (account.Balance > 0)
             {
                 MessageBox.Show($"The selected account has ${account.Balance:n2}, please withdraw the balance first");
                 return false;
             }
 
-            this.customer.Accounts.Remove(account);
-            return true;
+            
+            return this.accounts.Remove(account);
         }
 
-        public void ListAccounts(ListBox listbox)
+        /// <summary>
+        /// find account from id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Account GetAccountFromId(int id)
+        {
+           return  this.accounts.Find(account => account.Id == id);
+        }
+
+        /// <summary>
+        /// Populates the listbox.
+        /// </summary>
+        /// <param name="listbox">The listbox.</param>
+        public void PopulateListbox(ListBox listbox)
         {
             listbox.Items.Clear();
-            this.customer.Accounts.ForEach(account =>
+            this.accounts.ForEach(account =>
             {
                 listbox.Items.Add(account);
             });
+            listbox.Refresh();
         }
 
-        public void DepositIntoAccount(Account account, double amount)
+        /// <summary>
+        /// deposit into account with id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public bool DepositIntoAccountId(int id, double amount)
         {
-            if (account== null)
+            Account selected = GetAccountFromId(id);
+            if (selected == null)
             {
-                MessageBox.Show("Please, select a account to operate");
+                return false;
+            }
+
+            selected.Deposit(amount);
+            return true;
+        }
+
+            
+        /// <summary>
+        /// withdrawal from account with id        
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="amount"></param>
+        public void WithdrawFromAccountId(int id, double amount)
+        {
+            
+            //find the account with id
+            Account selected = GetAccountFromId(id);
+            //if not found, exit
+            if (selected == null)
+            {
                 return;
             }
 
-            account.Deposit(amount);
+            //founded, do withdraw.
+           
+             selected.Withdraw(amount);
+           
+            
         }
 
-        public void WithdrawlFromAccount(Account account, double amount)
-        {
 
-            if (account == null)
+        /// <summary>
+        /// function for transference between accounts
+        /// </summary>
+        /// <param name="accountFrom"></param>
+        /// <param name="accountTo"></param>
+        /// <param name="amount"></param>
+        /// <exception cref="TransferFailedException"></exception>
+        public void TransferBetweenAccounts(Account accountFrom, Account accountTo, double amount)
+        {
+            //check valid arguments
+            if (accountFrom == null || accountTo == null || accountFrom.Balance < amount)
             {
-                MessageBox.Show("Please, select a account to operate");
-                return;
+                throw new TransferFailedException("Transfer failed: Invalid account or insufficient balance.");
             }
-            account.Withdraw(amount);
+
+            try
+            {
+                GetAccountFromId(accountFrom.Id).Withdraw(amount);
+                GetAccountFromId(accountTo.Id).Deposit(amount);
+            }
+            catch (FailedWithdrawalException ex)
+            {
+                throw new TransferFailedException("Transfer failed: Withdrawal from source account failed.", ex);
+            }
+        }
+
+
+        /// <summary>
+        /// auxiliar, populate combobox items
+        /// </summary>
+        /// <param name="cb"></param>
+        public void ListAccountsCombo(ComboBox cb)
+        {
+            cb.Items.Clear();
+            this.customer.Accounts.ForEach(account =>
+            {
+                cb.Items.Add(account);
+            });
+            cb.Refresh();
+
         }
         
+
+
     }
 
 

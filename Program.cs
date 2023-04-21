@@ -4,8 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BankApp
 {
+    /// <summary>
+    /// Program Class
+    /// </summary>
     static class Program
     {
         /// <summary>
