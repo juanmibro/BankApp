@@ -1,0 +1,745 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankApp</name>
+    </assembly>
+    <members>
+        <member name="T:BankApp.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BankApp.Account.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:BankApp.Account.Balance">
+            <summary>
+            Gets or sets the balance.
+            </summary>
+            <value>
+            The balance.
+            </value>
+        </member>
+        <member name="P:BankApp.Account.Overdraft">
+            <summary>
+            Gets or sets the overdraft.
+            </summary>
+            <value>
+            The overdraft.
+            </value>
+        </member>
+        <member name="P:BankApp.Account.Fee">
+            <summary>
+            Gets or sets the fee.
+            </summary>
+            <value>
+            The fee.
+            </value>
+        </member>
+        <member name="P:BankApp.Account.Interest">
+            <summary>
+            Gets or sets the interest.
+            </summary>
+            <value>
+            The interest.
+            </value>
+        </member>
+        <member name="M:BankApp.Account.Withdraw(System.Double)">
+            <summary>
+            Withdraws the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+        </member>
+        <member name="M:BankApp.Account.Deposit(System.Double)">
+            <summary>
+            Deposits the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+        </member>
+        <member name="M:BankApp.Account.CalculateInterest">
+            <summary>
+            Calculates the interest.
+            </summary>
+        </member>
+        <member name="T:BankApp.AccountAdapter">
+            <summary>
+            
+            AccountAdapter
+            </summary>
+            <seealso cref="T:BankApp.Account" />
+        </member>
+        <member name="M:BankApp.AccountAdapter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.AccountAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.AccountAdapter.CalculateInterest">
+            <summary>
+            Calculates the interest.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:BankApp.AccountAdapter.Deposit(System.Double)">
+            <summary>
+            Deposits the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:BankApp.AccountAdapter.Withdraw(System.Double)">
+            <summary>
+            Withdraws the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:BankApp.AccountAdapter.getAccount">
+            <summary>
+            Gets the account.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:BankApp.Omni">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BankApp.Account" />
+        </member>
+        <member name="M:BankApp.Omni.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Omni"/> class.
+            </summary>
+            <param name="Id">The identifier.</param>
+        </member>
+        <member name="M:BankApp.Omni.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Omni"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.Omni.Deposit(System.Double)">
+            <summary>
+            Deposits the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+        </member>
+        <member name="M:BankApp.Omni.Withdraw(System.Double)">
+            <summary>
+            Withdraws the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+            <exception cref="T:BankApp.FailedWithdrawalException">Omni</exception>
+        </member>
+        <member name="M:BankApp.Omni.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:BankApp.Omni.CalculateInterest">
+            <summary>
+            Calculates the interest.
+            </summary>
+        </member>
+        <member name="T:BankApp.Everyday">
+            <summary>
+            Everyday Account
+            </summary>
+            <seealso cref="T:BankApp.Account" />
+        </member>
+        <member name="M:BankApp.Everyday.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Everyday"/> class.
+            </summary>
+            <param name="Id">The identifier.</param>
+        </member>
+        <member name="M:BankApp.Everyday.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Everyday"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.Everyday.Deposit(System.Double)">
+            <summary>
+            Deposits the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+        </member>
+        <member name="M:BankApp.Everyday.Withdraw(System.Double)">
+            <summary>
+            Withdraws the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+            <exception cref="T:BankApp.FailedWithdrawalException">Everyday</exception>
+        </member>
+        <member name="M:BankApp.Everyday.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:BankApp.Everyday.CalculateInterest">
+            <summary>
+            Calculates the interest.
+            </summary>
+        </member>
+        <member name="T:BankApp.Investment">
+            <summary>
+            Investmen Class
+            </summary>
+            <seealso cref="T:BankApp.Account" />
+        </member>
+        <member name="M:BankApp.Investment.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Investment"/> class.
+            </summary>
+            <param name="Id">The identifier.</param>
+        </member>
+        <member name="M:BankApp.Investment.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Investment"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.Investment.Deposit(System.Double)">
+            <summary>
+            Deposits the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+        </member>
+        <member name="M:BankApp.Investment.Withdraw(System.Double)">
+            <summary>
+            Withdraws the specified amount.
+            </summary>
+            <param name="Amount">The amount.</param>
+            <exception cref="T:BankApp.FailedWithdrawalException">Investment</exception>
+        </member>
+        <member name="M:BankApp.Investment.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:BankApp.Investment.CalculateInterest">
+            <summary>
+            Calculates the interest.
+            </summary>
+        </member>
+        <member name="T:BankApp.AccountsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BankApp.AccountsController.customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BankApp.AccountsController.accounts">
+            <summary>
+            The accounts
+            </summary>
+        </member>
+        <member name="M:BankApp.AccountsController.#ctor(BankApp.Customer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.AccountsController"/> class.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:BankApp.AccountsController.GetAccounts">
+            <summary>
+            Gets the accounts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.AccountsController.AddAccount(BankApp.Account)">
+            <summary>
+            register account
+            </summary>
+            <param name="account"></param>
+        </member>
+        <member name="M:BankApp.AccountsController.RemoveAccount(BankApp.Account)">
+            <summary>
+            unregister account
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.AccountsController.GetAccountFromId(System.Int32)">
+            <summary>
+            find account from id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.AccountsController.PopulateListbox(System.Windows.Forms.ListBox)">
+            <summary>
+            Populates the listbox.
+            </summary>
+            <param name="listbox">The listbox.</param>
+        </member>
+        <member name="M:BankApp.AccountsController.DepositIntoAccountId(System.Int32,System.Double)">
+            <summary>
+            deposit into account with id
+            </summary>
+            <param name="id"></param>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.AccountsController.WithdrawFromAccountId(System.Int32,System.Double)">
+            <summary>
+            withdrawal from account with id        
+            </summary>
+            <param name="id"></param>
+            <param name="amount"></param>
+        </member>
+        <member name="M:BankApp.AccountsController.TransferBetweenAccounts(BankApp.Account,BankApp.Account,System.Double)">
+            <summary>
+            function for transference between accounts
+            </summary>
+            <param name="accountFrom"></param>
+            <param name="accountTo"></param>
+            <param name="amount"></param>
+            <exception cref="T:BankApp.TransferFailedException"></exception>
+        </member>
+        <member name="M:BankApp.AccountsController.ListAccountsCombo(System.Windows.Forms.ComboBox)">
+            <summary>
+            auxiliar, populate combobox items
+            </summary>
+            <param name="cb"></param>
+        </member>
+        <member name="T:BankApp.Customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BankApp.Customer.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:BankApp.Customer.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:BankApp.Customer.Contact_details">
+            <summary>
+            Gets or sets the contact details.
+            </summary>
+            <value>
+            The contact details.
+            </value>
+        </member>
+        <member name="P:BankApp.Customer.Fee">
+            <summary>
+            Gets or sets the fee.
+            </summary>
+            <value>
+            The fee.
+            </value>
+        </member>
+        <member name="P:BankApp.Customer.CustomerType">
+            <summary>
+            Gets or sets the type of the customer.
+            </summary>
+            <value>
+            The type of the customer.
+            </value>
+        </member>
+        <member name="P:BankApp.Customer.Accounts">
+            <summary>
+            Gets or sets the accounts.
+            </summary>
+            <value>
+            The accounts.
+            </value>
+        </member>
+        <member name="T:BankApp.CustomerAdapter">
+            <summary>
+            CustomerAdapter
+            </summary>
+            <seealso cref="T:BankApp.Customer" />
+        </member>
+        <member name="M:BankApp.CustomerAdapter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.CustomerAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.CustomerAdapter.GetAccount">
+            <summary>
+            Gets the account.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BankApp.Staff">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BankApp.Customer" />
+        </member>
+        <member name="M:BankApp.Staff.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Staff"/> class.
+            </summary>
+            <param name="Id">The identifier.</param>
+            <param name="Name">The name.</param>
+            <param name="Contact_details">The contact details.</param>
+        </member>
+        <member name="M:BankApp.Staff.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Staff"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.Staff.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:BankApp.Client">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BankApp.Customer" />
+        </member>
+        <member name="M:BankApp.Client.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Client"/> class.
+            </summary>
+            <param name="Id">The identifier.</param>
+            <param name="Name">The name.</param>
+            <param name="Contact_details">The contact details.</param>
+        </member>
+        <member name="M:BankApp.Client.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.Client"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.Client.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:BankApp.CustomersController">
+            <summary>
+            CustomerController
+            </summary>
+        </member>
+        <member name="F:BankApp.CustomersController.database">
+            <summary>
+            The database
+            </summary>
+        </member>
+        <member name="M:BankApp.CustomersController.#ctor(BankApp.StateController)">
+            <summary>
+            CustomersController
+            </summary>
+        </member>
+        <member name="M:BankApp.CustomersController.getCustomers">
+            <summary>
+            Get a list of customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.CustomersController.AddCustomer(BankApp.Customer)">
+            <summary>
+            Addd customer
+            </summary>
+            <param name="customer"></param>
+        </member>
+        <member name="M:BankApp.CustomersController.RemoveCustomer(BankApp.Customer)">
+            <summary>
+            remove customer
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.CustomersController.getAccountsFromCustomer(BankApp.Customer)">
+            <summary>
+            list accounts from customer
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.CustomersController.PopulateList(System.Windows.Forms.ListBox)">
+            <summary>
+            populate listbox *auxiliary
+            </summary>
+            <param name="listbox"></param>
+        </member>
+        <member name="M:BankApp.CustomersController.SaveState">
+            <summary>
+            Saves the state.
+            </summary>
+        </member>
+        <member name="M:BankApp.CustomersController.LoadState">
+            <summary>
+            Loads the state.
+            </summary>
+        </member>
+        <member name="T:BankApp.FormAccounts">
+            <summary>
+            FormAcounts
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Form" />
+        </member>
+        <member name="M:BankApp.FormAccounts.#ctor(BankApp.Customer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.FormAccounts"/> class.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.UpdateControls">
+            <summary>
+            Updates the controls.
+            </summary>
+        </member>
+        <member name="M:BankApp.FormAccounts.FormAccounts_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the FormAccounts control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnAddAccount_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnAddAccount control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.listAccounts_SelectedValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the SelectedValueChanged event of the listAccounts control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.button4_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button4 control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button3 control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnDeleteAccount_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnDeleteAccount control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnDeposit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnDeposit control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnWithdraw_Click(System.Object,System.EventArgs)">
+            <summary>
+            witdraw button logic
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnTransfer_Click(System.Object,System.EventArgs)">
+            <summary>
+            btnTrnsference logic
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnDialogCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            btnDialogCancel logic
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BankApp.FormAccounts.btnDialogAcept_Click(System.Object,System.EventArgs)">
+            <summary>
+            btndialogAccept logic
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BankApp.FormAccounts.FormAccounts_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Handles the FormClosing event of the FormAccounts control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.FormClosingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:BankApp.FormAccounts.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BankApp.FormAccounts.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BankApp.FormAccounts.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BankApp.FormBank">
+            <summary>
+            
+            </summary>
+            <summary>
+            Bank Form class
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Form" />
+        </member>
+        <member name="M:BankApp.FormBank.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.FormBank"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.FormBank.btnShowCustomers_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnShowCustomers control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:BankApp.FormBank.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BankApp.FormBank.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BankApp.FormBank.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BankApp.FormCustomers">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Form" />
+        </member>
+        <member name="M:BankApp.FormCustomers.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.FormCustomers"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.FormCustomers.FormCustomers_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Handles the FormClosing event of the FormCustomers control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.FormClosingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:BankApp.FormCustomers.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BankApp.FormCustomers.Dispose(System.Boolean)">
+            <summary>Clean up any resources being used.</summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BankApp.FormCustomers.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BankApp.Program">
+            <summary>
+            Program Class
+            </summary>
+        </member>
+        <member name="M:BankApp.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:BankApp.StateController.LoadState">
+            <summary>
+            Loads the state.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BankApp.StateController.SaveState(System.Collections.Generic.List{BankApp.Customer})">
+            <summary>
+            Saves the state.
+            </summary>
+            <param name="customers">The customers.</param>
+        </member>
+        <member name="T:BankApp.TransferFailedException">
+            <summary>
+            TransfeFailedException
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:BankApp.TransferFailedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.TransferFailedException"/> class.
+            </summary>
+        </member>
+        <member name="M:BankApp.TransferFailedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.TransferFailedException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:BankApp.TransferFailedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.TransferFailedException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (<see langword="Nothing" /> in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:BankApp.TransferFailedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BankApp.TransferFailedException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+    </members>
+</doc>

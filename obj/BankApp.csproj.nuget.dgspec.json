@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1\\BankApp\\BankApp.csproj": {}
+    "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1-2\\BankApp\\BankApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1\\BankApp\\BankApp.csproj": {
+    "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1-2\\BankApp\\BankApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1\\BankApp\\BankApp.csproj",
+        "projectUniqueName": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1-2\\BankApp\\BankApp.csproj",
         "projectName": "BankApp",
-        "projectPath": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1\\BankApp\\BankApp.csproj",
+        "projectPath": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1-2\\BankApp\\BankApp.csproj",
         "packagesPath": "C:\\Users\\juanm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1\\BankApp\\obj\\",
+        "outputPath": "C:\\Users\\juanm\\OneDrive\\Desktop\\Whitecliffe\\Level 7\\Advanced Programming\\Asessment 1-2\\BankApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\juanm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
